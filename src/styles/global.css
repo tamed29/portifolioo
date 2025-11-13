@@ -1,0 +1,61 @@
+/* stylelint-disable at-rule-no-unknown */
+@import "../index.css";
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100 font-sans antialiased transition-colors duration-500;
+}
+
+::selection {
+  @apply bg-indigo-500/70 text-white;
+}
+
+.hero-gradient {
+  background: radial-gradient(circle at top left, rgba(129, 140, 248, 0.25), transparent 45%),
+    radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.2), transparent 50%),
+    linear-gradient(135deg, rgba(37, 99, 235, 0.12), rgba(29, 78, 216, 0.32));
+}
+
+.glass-card {
+  @apply bg-white/80 backdrop-blur border border-white/20 shadow-lg dark:bg-slate-900/60 dark:border-slate-700/60;
+}
+
+.nav-link {
+  @apply relative inline-flex items-center px-3 py-2 text-sm font-medium tracking-wide uppercase transition-colors duration-200;
+}
+
+.nav-link::after {
+  content: "";
+  @apply absolute bottom-1 left-1/2 h-[2px] w-0 -translate-x-1/2 rounded-full bg-indigo-500 transition-all duration-300;
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after,
+.nav-link.active::after {
+  @apply w-3/4;
+}
+
+.tilt-card {
+  transform-style: preserve-3d;
+}
+
+.tilt-card > * {
+  transform: translateZ(25px);
+}
+
+.aos-init {
+  opacity: 0;
+}
+
+.aos-animate {
+  opacity: 1;
+  transition-property: opacity, transform;
+}
+
