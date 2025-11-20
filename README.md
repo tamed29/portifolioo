@@ -1,16 +1,82 @@
-# React + Vite
+# 🚀 React + Vite — Extended Project Documentation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is built using **React** and **Vite**, providing a fast, modern, and optimized development setup.  
+Vite offers lightning-fast Hot Module Replacement (HMR), minimal configuration, and excellent build performance, making it a popular choice for modern React applications.
 
-Currently, two official plugins are available:
+This README expands the default Vite template documentation with clearer explanations, additional setup instructions, recommended tools, and production guidance.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 📦 What’s Included
 
-The React Compiler is not enabled on this template because of  its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This template provides:
 
-## Expanding the ESLint configuration
+- ⚡ **React + Vite setup** with HMR  
+- 🧹 **ESLint preconfigured** with recommended rules  
+- 🔥 **Two official React plugin options** (Babel or SWC)  
+- 🛡 Clean folder structure and minimal boilerplate  
+- 🚀 Easy extension of the project for production use  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🔌 Available React Plugins
+
+### 1. **@vitejs/plugin-react**
+Uses **Babel** for Fast Refresh and transforming JSX.  
+Best if you need:
+- Babel plugins  
+- Custom JSX transforms  
+- Mature ecosystem tools  
+
+### 2. **@vitejs/plugin-react-swc**
+Uses **SWC**, a Rust-based compiler, providing:
+- Much faster build times  
+- Faster HMR  
+- Good performance for large applications  
+
+Both are officially maintained and can be swapped easily based on your needs.
+
+---
+
+## 🧠 React Compiler (Optional)
+
+The **React Compiler** is a new optimization tool that rewrites React components for better performance.
+
+It is **disabled** by default in this template because it may slow down development builds.
+
+If you want to add it:
+
+🔗 https://react.dev/learn/react-compiler/installation
+
+Use it only for:
+- Production apps
+- Large component-heavy interfaces
+- Apps needing optimized rerenders
+
+---
+
+## 🧪 Expanding ESLint for Production
+
+For real-world applications, we recommend **TypeScript** with **type-aware ESLint rules**. These provide:
+
+- Better error detection  
+- Code intelligence  
+- Auto-fix linting  
+- Safer refactoring  
+
+You can check the official TypeScript + React + Vite template here:
+
+🔗 https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts
+
+Useful plugins include:
+
+- `@typescript-eslint/eslint-plugin`
+- `@typescript-eslint/parser`
+- `eslint-plugin-react`
+- `eslint-plugin-import`
+- `eslint-plugin-jsx-a11y`
+
+---
+
+## 📁 Project Structure (Recommended)
+
