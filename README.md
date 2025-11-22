@@ -3,7 +3,7 @@
 This project is  built using **React** and **Vite**, providing a fast, modern, and optimized development setup.  
 Vite offers lightning-fast Hot Module Replacement (HMR), minimal configuration, and excellent build performance, making it a popular choice for modern React applications.
 
-This README expands the default Vite template documentation with clearer explanations, additional setup instructions, recommended tools, and production guidance.
+This README expands the default Vite template documentation with clearer explanations, additional  setup instructions, recommended tools, and production guidance.
 
 ---
 
