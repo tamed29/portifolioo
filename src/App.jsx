@@ -9,6 +9,8 @@ import About from './pages/About';
 import Skills from './pages/Skills';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
+import HeroCanvas from './components/hero-canvas';
+import CustomCursor from './components/CustomCursor';
 
 const App = () => {
   const [theme, setTheme] = useState(() => {
@@ -45,6 +47,7 @@ const App = () => {
 
   return (
     <div className={`min-h-screen ${lightBackground} ${darkBackground}`}>
+      <CustomCursor />
       <Navbar theme={theme} onToggleTheme={toggleTheme} />
       <main className="relative">
         <Home />
