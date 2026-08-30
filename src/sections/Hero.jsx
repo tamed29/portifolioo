@@ -92,7 +92,7 @@ const Hero = () => {
           </div>
 
           <p className="text-textBody text-lg max-w-xl leading-relaxed mt-2 text-center lg:text-left">
-            I engineer robust, scalable software solutions and integrate advanced artificial intelligence capabilities to drive business value. Focused on delivering production-ready, high-performance systems.
+            I build robust, scalable software solutions and integrate advanced artificial intelligence capabilities to drive business value. Focused on delivering production-ready, high-performance systems.
           </p>
 
           <div className="flex flex-wrap justify-center lg:justify-start items-center gap-4 mt-4">
