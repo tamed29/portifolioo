@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 248, 250, 252;
+    --surface: 255, 255, 255;
+    --primary: 0, 136, 170;
+    --secondary: 109, 40, 217;
+    --text-heading: 15, 23, 42;
+    --text-body: 71, 85, 105;
+  }
+
+  .dark {
+    --background: 10, 14, 23;
+    --surface: 16, 21, 31;
+    --primary: 0, 217, 255;
+    --secondary: 124, 58, 237;
+    --text-heading: 230, 236, 245;
+    --text-body: 154, 165, 177;
+  }
+
+  body {
+    @apply bg-background text-textBody font-sans antialiased overflow-x-hidden transition-colors duration-300;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-textHeading font-bold tracking-tight transition-colors duration-300;
+  }
+}
+
+/* Custom scrollbar for webkit */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-surface rounded;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-secondary;
+}
+
+/* Glow animation for terminal/background */
+@keyframes glow {
+  0% { box-shadow: 0 0 5px rgba(var(--primary), 0.2), 0 0 10px rgba(var(--secondary), 0.2); }
+  50% { box-shadow: 0 0 10px rgba(var(--primary), 0.5), 0 0 20px rgba(var(--secondary), 0.5); }
+  100% { box-shadow: 0 0 5px rgba(var(--primary), 0.2), 0 0 10px rgba(var(--secondary), 0.2); }
+}
+.animate-glow {
+  animation: glow 3s infinite alternate;
+}
+
+@keyframes scroll-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-scroll-left {
+  animation: scroll-left 60s linear infinite;
+}
+.animate-scroll-left:hover {
+  animation-play-state: paused;
+}
