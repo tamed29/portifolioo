@@ -1,12 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Terminal, Send, Loader2, X, MessageSquare } from 'lucide-react';
-import { askAI } from '../utils/aiService';
+import { getResponse } from '../utils/chatEngine';
 
 const FloatingChat = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
-    { role: 'ai', text: "Hello! I'm the AI assistant for Tamirat Dereje. Ask me anything about his skills, experience, or projects." }
+    { role: 'ai', text: "Hello! I'm the AI assistant for Tamirat Dereje. Ask me anything about his skills, experience, projects, or education." }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -31,10 +31,14 @@ const FloatingChat = () => {
     setInput('');
     setIsLoading(true);
 
-    const response = await askAI(userMessage);
+    // Simulate typing delay for a natural feel (400-800ms)
+    const delay = Math.floor(Math.random() * 400) + 400;
     
-    setMessages(prev => [...prev, { role: 'ai', text: response }]);
-    setIsLoading(false);
+    setTimeout(() => {
+      const response = getResponse(userMessage);
+      setMessages(prev => [...prev, { role: 'ai', text: response }]);
+      setIsLoading(false);
+    }, delay);
   };
 
   return (
