@@ -4,6 +4,7 @@ import { Link } from 'react-scroll';
 import { profile } from '../data/profile';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { ChevronDown } from 'lucide-react';
+import profileImg from '../assets/profile-neon.png.jpg';
 
 const ProfileImage = ({ className }) => (
   <motion.div
@@ -19,7 +20,7 @@ const ProfileImage = ({ className }) => (
     <div className="relative w-full h-full bg-surface rounded-full p-1.5 shadow-2xl z-10 overflow-hidden">
       <div className="w-full h-full rounded-full overflow-hidden relative bg-background">
         <img
-          src="/src/assets/profile-neon.png.jpg"
+          src={profileImg}
           alt="Tamirat Dereje"
           className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
           onError={(e) => {
