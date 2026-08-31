@@ -91,13 +91,13 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col items-center lg:items-start gap-4 mt-4 w-full sm:w-auto">
-            <div className="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-3 w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-3 w-full sm:w-auto mt-4 mb-2">
               <Link
                 to="projects"
                 smooth={true}
                 duration={500}
                 offset={-80}
-                className="w-full sm:w-auto px-5 py-2 md:px-6 md:py-2.5 text-center rounded-xl bg-gradient-to-r from-primary to-secondary text-white font-bold tracking-wide text-xs cursor-pointer hover:shadow-[0_0_20px_rgba(0,217,255,0.4)] transition-all transform hover:-translate-y-1"
+                className="w-[85%] max-w-[280px] sm:max-w-none sm:w-auto px-5 py-2 md:px-6 md:py-2.5 text-center rounded-xl bg-gradient-to-r from-primary to-secondary text-white font-bold tracking-wide text-xs cursor-pointer hover:shadow-[0_0_20px_rgba(0,217,255,0.4)] transition-all transform hover:-translate-y-1"
               >
                 VIEW MY PROJECTS
               </Link>
@@ -106,14 +106,14 @@ const Hero = () => {
                 smooth={true}
                 duration={500}
                 offset={-80}
-                className="w-full sm:w-auto px-5 py-2 md:px-6 md:py-2.5 text-center rounded-xl bg-transparent text-textHeading border-2 border-primary/50 font-bold tracking-wide text-xs cursor-pointer hover:bg-primary/10 hover:border-primary transition-all transform hover:-translate-y-1"
+                className="w-[85%] max-w-[280px] sm:max-w-none sm:w-auto px-5 py-2 md:px-6 md:py-2.5 text-center rounded-xl bg-transparent text-textHeading border-2 border-primary/50 font-bold tracking-wide text-xs cursor-pointer hover:bg-primary/10 hover:border-primary transition-all transform hover:-translate-y-1"
               >
                 CONTACT ME
               </Link>
               <a
                 href="/tamirat_cv.pdf"
                 download="Tamirat_Dereje_CV.pdf"
-                className="w-full sm:w-auto px-5 py-2 md:px-6 md:py-2.5 text-center rounded-xl bg-surface/50 text-textBody border border-textBody/20 font-bold tracking-wide text-xs cursor-pointer hover:bg-surface hover:text-textHeading transition-all transform hover:-translate-y-1"
+                className="w-[85%] max-w-[280px] sm:max-w-none sm:w-auto px-5 py-2 md:px-6 md:py-2.5 text-center rounded-xl bg-surface/50 text-textBody border border-textBody/20 font-bold tracking-wide text-xs cursor-pointer hover:bg-surface hover:text-textHeading transition-all transform hover:-translate-y-1"
               >
                 DOWNLOAD MY CV
               </a>
