@@ -29,17 +29,17 @@ const About = () => {
             className="lg:col-span-3 text-textBody text-lg leading-relaxed space-y-6"
           >
             <p>
-              Hello! I'm a full-stack developer and 4th-year Software Engineering student at Arbaminch University. who loves building polished, scalable web applications. I enjoy the entire process of bringing ideas to life—from crafting intuitive interfaces to architecting robust backends that can handle real-world demands.
+              Hello! I'm a full-stack developer and 4th-year Software Engineering student passionate about crafting polished, scalable applications. I thrive in bringing ideas to life, from intuitive user interfaces to robust, real-world backends.
             </p>
             <div className="p-5 bg-surface/50 border border-primary/20 rounded-xl">
               <p className="mb-2"><strong>🎓 Education:</strong></p>
               <p className="font-semibold text-textHeading">{profile.education.institution}</p>
               <p className="text-primary">{profile.education.degree}</p>
               <p className="text-sm mt-1">{profile.education.status}</p>
-              <p className="text-sm mt-2">Specializing increasingly in Artificial Intelligence & Machine Learning</p>
+              <p className="text-sm mt-2">Specializing in Artificial Intelligence & Machine Learning</p>
             </div>
             <p>
-              Right now, my biggest focus is bridging the gap between traditional software development and AI. I'm actively exploring machine learning models and intelligent systems, with the goal of building smarter, data-driven applications that go beyond standard web development.
+              Currently, my primary focus is bridging the gap between traditional software development and AI. By exploring machine learning and intelligent systems, I aim to build smarter, data-driven applications that deliver exceptional value.
             </p>
           </motion.div>
 

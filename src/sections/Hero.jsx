@@ -41,26 +41,21 @@ const ProfileImage = ({ className }) => (
 
 const Hero = () => {
   return (
-    <section id="hero" className="min-h-screen relative flex flex-col justify-center overflow-hidden pt-20 lg:pt-0">
+    <section id="hero" className="min-h-screen relative flex flex-col justify-center overflow-hidden pt-24 lg:pt-32 pb-12">
       {/* Subtle Background Elements for depth in both themes */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-[10%] -left-[10%] w-[40%] h-[50%] bg-primary/10 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-[120px] animate-pulse" style={{ animationDuration: '8s' }}></div>
         <div className="absolute top-[20%] -right-[10%] w-[40%] h-[50%] bg-secondary/10 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-[120px] animate-pulse" style={{ animationDuration: '10s', animationDelay: '2s' }}></div>
       </div>
 
-      <div className="max-w-[1140px] mx-auto px-6 md:px-12 lg:px-24 w-full flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10 pt-10 lg:pt-0">
+      <div className="max-w-[1140px] mx-auto px-6 md:px-12 lg:px-24 w-full flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10 pt-10 lg:pt-12">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex flex-col items-center lg:items-start text-center lg:text-left gap-6"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface border border-primary/30 w-fit shadow-sm">
-            <span className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span>
-            <span className="text-sm font-semibold tracking-wide text-primary uppercase">Open to Opportunities</span>
-          </div>
-
-          <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-tight tracking-tight">
+          <h1 className="text-5xl md:text-6xl lg:text-[4rem] xl:text-7xl font-black leading-tight tracking-tight">
             <span className="block text-2xl md:text-3xl font-medium text-textBody mb-2 tracking-normal">Hi, I'm</span>
             <span className="block text-textHeading mb-2">Tamirat</span>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-blue-400 to-secondary pb-2">
@@ -91,48 +86,50 @@ const Hero = () => {
             </div>
           </div>
 
-          <p className="text-textBody text-lg max-w-xl leading-relaxed mt-2 text-center lg:text-left">
-            I build robust, scalable software solutions and integrate advanced artificial intelligence capabilities to drive business value. Focused on delivering production-ready, high-performance systems.
+          <p className="text-textBody text-base md:text-lg max-w-xl leading-relaxed mt-2 text-center lg:text-left mx-auto lg:mx-0">
+            I engineer robust, scalable software and integrate advanced AI capabilities to drive business value. Focused on delivering production-ready systems.
           </p>
 
-          <div className="flex flex-wrap justify-center lg:justify-start items-center gap-4 mt-4">
-            <Link
-              to="projects"
-              smooth={true}
-              duration={500}
-              offset={-80}
-              className="px-8 py-4 rounded-xl bg-gradient-to-r from-primary to-secondary text-white font-bold tracking-wide text-sm cursor-pointer hover:shadow-[0_0_25px_rgba(0,217,255,0.4)] transition-all transform hover:-translate-y-1"
-            >
-              VIEW PROJECTS
-            </Link>
-            <Link
-              to="contact"
-              smooth={true}
-              duration={500}
-              offset={-80}
-              className="px-8 py-4 rounded-xl bg-transparent text-textHeading border-2 border-primary/50 font-bold tracking-wide text-sm cursor-pointer hover:bg-primary/10 hover:border-primary transition-all transform hover:-translate-y-1"
-            >
-              CONTACT ME
-            </Link>
+          <div className="flex flex-col items-center lg:items-start gap-4 mt-4 w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-4 w-full sm:w-auto">
+              <Link
+                to="projects"
+                smooth={true}
+                duration={500}
+                offset={-80}
+                className="w-full sm:w-auto px-6 py-2.5 md:px-8 md:py-3 text-center rounded-xl bg-gradient-to-r from-primary to-secondary text-white font-bold tracking-wide text-xs md:text-sm cursor-pointer hover:shadow-[0_0_25px_rgba(0,217,255,0.4)] transition-all transform hover:-translate-y-1"
+              >
+                VIEW PROJECTS
+              </Link>
+              <Link
+                to="contact"
+                smooth={true}
+                duration={500}
+                offset={-80}
+                className="w-full sm:w-auto px-6 py-2.5 md:px-8 md:py-3 text-center rounded-xl bg-transparent text-textHeading border-2 border-primary/50 font-bold tracking-wide text-xs md:text-sm cursor-pointer hover:bg-primary/10 hover:border-primary transition-all transform hover:-translate-y-1"
+              >
+                CONTACT ME
+              </Link>
+            </div>
 
-            <div className="flex items-center gap-3 ml-2 mt-4 sm:mt-0">
+            <div className="flex items-center justify-center lg:justify-start gap-3 mt-2 w-full sm:w-auto">
               <a
                 href={profile.contact.github}
                 target="_blank"
                 rel="noreferrer"
-                className="p-3.5 rounded-xl bg-surface border border-textBody/20 text-textHeading hover:text-[#24292e] dark:hover:text-white hover:border-[#24292e] dark:hover:border-white transition-all transform hover:-translate-y-1"
+                className="p-3 md:p-3.5 rounded-xl bg-surface border border-textBody/20 text-textHeading hover:text-[#24292e] dark:hover:text-white hover:border-[#24292e] dark:hover:border-white transition-all transform hover:-translate-y-1"
                 aria-label="GitHub"
               >
-                <FaGithub size={22} />
+                <FaGithub size={20} className="md:w-[22px] md:h-[22px]" />
               </a>
               <a
                 href={profile.contact.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="p-3.5 rounded-xl bg-surface border border-textBody/20 text-textHeading hover:text-[#0077b5] hover:border-[#0077b5] transition-all transform hover:-translate-y-1"
+                className="p-3 md:p-3.5 rounded-xl bg-surface border border-textBody/20 text-textHeading hover:text-[#0077b5] hover:border-[#0077b5] transition-all transform hover:-translate-y-1"
                 aria-label="LinkedIn"
               >
-                <FaLinkedin size={22} />
+                <FaLinkedin size={20} className="md:w-[22px] md:h-[22px]" />
               </a>
             </div>
           </div>
@@ -155,7 +152,7 @@ const Hero = () => {
         smooth={true}
         duration={500}
         offset={-80}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer text-textBody hover:text-primary transition-colors z-20"
+        className="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 cursor-pointer text-textBody hover:text-primary transition-colors z-20"
       >
         <span className="text-[10px] uppercase tracking-widest font-bold">Scroll</span>
         <motion.div

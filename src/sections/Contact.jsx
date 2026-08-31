@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { profile } from '../data/profile';
 import { Mail, Phone, Send } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaInstagram, FaTelegram } from 'react-icons/fa';
 
 const Contact = () => {
+  const [formStatus, setFormStatus] = useState(null);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setFormStatus('success');
+    setTimeout(() => setFormStatus(null), 5000);
+    e.target.reset(); // clear form
+  };
+
   return (
     <section id="contact" className="py-24 relative z-10 bg-surface/30">
       <div className="max-w-[1140px] mx-auto px-6 md:px-12 lg:px-24">
@@ -18,9 +27,12 @@ const Contact = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-textHeading mb-6">Contact</h2>
           <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary rounded-full mx-auto mb-8"></div>
           
-          <p className="text-textBody text-lg max-w-2xl mx-auto mb-12">
-            I'm currently open to {profile.openTo} 
-            Whether you have a question, a project proposal, or just want to say hi, I'd love to hear from you. My inbox is always open!
+          <p className="text-textBody text-base md:text-lg max-w-2xl mx-auto mb-12 leading-relaxed text-left md:text-center">
+            I'm currently open to {profile.openTo.replace(/\.$/, '')}.
+            <br className="hidden md:block" />
+            <span className="inline-block mt-2">
+              Whether you have a question, a project proposal, or just want to say hi, I'd love to hear from you. My inbox is always open!
+            </span>
           </p>
         </motion.div>
 
@@ -31,12 +43,22 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
           className="max-w-xl mx-auto bg-surface/80 backdrop-blur-sm p-8 rounded-2xl border border-primary/20 shadow-[0_0_30px_-10px_rgba(0,217,255,0.2)] mb-16"
         >
-          <form className="flex flex-col gap-6" onSubmit={(e) => { e.preventDefault(); window.location.href = 'mailto:'; }}>
+          <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
+            {formStatus === 'success' && (
+              <motion.div 
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="bg-green-500/10 border border-green-500/30 text-green-400 p-4 rounded-lg text-sm font-medium text-center shadow-sm"
+              >
+                Thank you for reaching out! Your message has been sent successfully, and I will reply as soon as possible.
+              </motion.div>
+            )}
             <div className="flex flex-col gap-2">
               <label htmlFor="name" className="text-xs font-bold text-textBody tracking-widest uppercase">Name</label>
               <input 
                 type="text" 
                 id="name"
+                required
                 placeholder="Your name" 
                 className="bg-background border border-white/10 rounded-lg px-4 py-3 text-textHeading placeholder:text-textBody/50 focus:outline-none focus:border-primary/50 transition-colors"
               />
@@ -46,6 +68,7 @@ const Contact = () => {
               <input 
                 type="email" 
                 id="email"
+                required
                 placeholder="your@email.com" 
                 className="bg-background border border-white/10 rounded-lg px-4 py-3 text-textHeading placeholder:text-textBody/50 focus:outline-none focus:border-primary/50 transition-colors"
               />
@@ -54,6 +77,7 @@ const Contact = () => {
               <label htmlFor="message" className="text-xs font-bold text-textBody tracking-widest uppercase">Message</label>
               <textarea 
                 id="message"
+                required
                 rows="4"
                 placeholder="Tell me about your idea, timeline, and goals..." 
                 className="bg-background border border-white/10 rounded-lg px-4 py-3 text-textHeading placeholder:text-textBody/50 focus:outline-none focus:border-primary/50 transition-colors resize-none"
