@@ -99,8 +99,15 @@ const Hero = () => {
                 offset={-80}
                 className="w-full sm:w-auto px-6 py-2.5 md:px-8 md:py-3 text-center rounded-xl bg-gradient-to-r from-primary to-secondary text-white font-bold tracking-wide text-xs md:text-sm cursor-pointer hover:shadow-[0_0_25px_rgba(0,217,255,0.4)] transition-all transform hover:-translate-y-1"
               >
-                VIEW PROJECTS
+                VIEW MY PROJECTS
               </Link>
+              <a
+                href="/cv.pdf"
+                download="Tamirat_Dereje_CV.pdf"
+                className="w-full sm:w-auto px-6 py-2.5 md:px-8 md:py-3 text-center rounded-xl bg-transparent text-textHeading border-2 border-primary/50 font-bold tracking-wide text-xs md:text-sm cursor-pointer hover:bg-primary/10 hover:border-primary transition-all transform hover:-translate-y-1"
+              >
+                DOWNLOAD CV
+              </a>
               <Link
                 to="contact"
                 smooth={true}
