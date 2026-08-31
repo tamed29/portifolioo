@@ -111,7 +111,7 @@ const Hero = () => {
                 CONTACT ME
               </Link>
               <a
-                href="/cv.pdf"
+                href="/tamirat_cv.pdf"
                 download="Tamirat_Dereje_CV.pdf"
                 className="w-full sm:w-auto px-5 py-2 md:px-6 md:py-2.5 text-center rounded-xl bg-surface/50 text-textBody border border-textBody/20 font-bold tracking-wide text-xs cursor-pointer hover:bg-surface hover:text-textHeading transition-all transform hover:-translate-y-1"
               >
