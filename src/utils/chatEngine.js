@@ -58,13 +58,18 @@ export const getResponse = (userMessage) => {
   }
 
   // Experience / Background
-  if (msg.match(/\b(experience|background|who are you|about|bio)\b/)) {
-    return `Tamirat is a ${profile.title}. ${profile.bio} He has worked as an independent Full-Stack Software Developer since 2024, designing and deploying production web apps with robust UIs, REST APIs, and database integrations.`;
+  if (msg.match(/\b(experience|experiance|background|who are you|about|bio|year|years)\b/)) {
+    return `Tamirat is a ${profile.title}. He has over 3 years of hands-on experience designing and deploying production web applications, and has worked as an independent Full-Stack Software Developer since 2024.`;
   }
 
   // Education
   if (msg.match(/\b(education|university|study|degree|school)\b/)) {
     return `Tamirat is a ${profile.education.status} pursuing his ${profile.education.degree} at ${profile.education.institution}. He focuses on both core software engineering and emerging AI/ML technologies.`;
+  }
+
+  // CV / Resume
+  if (msg.match(/\b(cv|resume|download cv|document)\b/)) {
+    return `You can download Tamirat's full CV using the "DOWNLOAD MY CV" button in the Hero section above! It covers all his extensive skills, education, and project experiences.`;
   }
 
   // Contact
@@ -77,11 +82,11 @@ export const getResponse = (userMessage) => {
            `Feel free to reach out anytime!`;
   }
 
-  // Availability / Hiring
-  if (msg.match(/\b(available|hire|freelance|job|opportunity)\b/)) {
-    return `Yes! Tamirat is open to ${profile.openTo} He is always looking for exciting opportunities to build impactful software. You can reach out to him via his contact links!`;
+  // Availability / Hiring / Freelancing / Work
+  if (msg.match(/\b(available|hire|freelance|freelancing|job|opportunity|work|real work)\b/)) {
+    return `Yes! Tamirat is open to any real work, including freelancing, AI/ML projects, and software engineering roles. He is fully capable of owning a project end-to-end. You can reach out to him via the Contact section to discuss your project!`;
   }
 
   // Fallback
-  return `I'm not quite sure about that. As Tamirat's assistant, I can best answer questions regarding his skills, projects, background, education, and contact information. Could you rephrase your question or ask about one of those topics?`;
+  return `I'm not quite sure about that. As Tamirat's assistant, I can best answer questions regarding his skills, years of experience, projects, education, CV, and contact information. Could you rephrase your question?`;
 };
