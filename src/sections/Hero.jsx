@@ -41,14 +41,14 @@ const ProfileImage = ({ className }) => (
 
 const Hero = () => {
   return (
-    <section id="hero" className="min-h-screen relative flex flex-col justify-center overflow-hidden pt-24 lg:pt-32 pb-12">
+    <section id="hero" className="min-h-screen relative flex flex-col justify-center overflow-hidden pt-20 lg:pt-20 pb-12">
       {/* Subtle Background Elements for depth in both themes */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-[10%] -left-[10%] w-[40%] h-[50%] bg-primary/10 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-[120px] animate-pulse" style={{ animationDuration: '8s' }}></div>
         <div className="absolute top-[20%] -right-[10%] w-[40%] h-[50%] bg-secondary/10 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-[120px] animate-pulse" style={{ animationDuration: '10s', animationDelay: '2s' }}></div>
       </div>
 
-      <div className="max-w-[1140px] mx-auto px-6 md:px-12 lg:px-24 w-full flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10 pt-10 lg:pt-12">
+      <div className="max-w-[1140px] mx-auto px-6 md:px-12 lg:px-24 w-full flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10 pt-10 lg:pt-4">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -115,7 +115,7 @@ const Hero = () => {
                 download="Tamirat_Dereje_CV.pdf"
                 className="w-full sm:w-auto px-5 py-2 md:px-6 md:py-2.5 text-center rounded-xl bg-surface/50 text-textBody border border-textBody/20 font-bold tracking-wide text-xs cursor-pointer hover:bg-surface hover:text-textHeading transition-all transform hover:-translate-y-1"
               >
-                DOWNLOAD CV
+                DOWNLOAD MY CV
               </a>
             </div>
 

@@ -50,10 +50,12 @@ const Navbar = () => {
             <Link
               key={link.name}
               to={link.to}
+              spy={true}
               smooth={true}
               duration={500}
               offset={-80}
-              className="relative text-textHeading hover:text-primary transition-colors cursor-pointer text-base font-bold group"
+              activeClass="active"
+              className="relative text-textHeading hover:text-primary transition-colors cursor-pointer text-base font-bold group [&.active]:text-primary [&.active>span]:w-full"
             >
               {link.name}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary group-hover:w-full transition-all duration-300"></span>
@@ -89,11 +91,13 @@ const Navbar = () => {
             <Link
               key={link.name}
               to={link.to}
+              spy={true}
               smooth={true}
               duration={500}
               offset={-80}
               onClick={() => setIsOpen(false)}
-              className="text-textHeading hover:text-primary transition-colors cursor-pointer text-lg py-2 border-b border-background"
+              activeClass="active"
+              className="text-textHeading hover:text-primary transition-colors cursor-pointer text-lg py-2 border-b border-background [&.active]:text-primary [&.active]:border-primary"
             >
               {link.name}
             </Link>
