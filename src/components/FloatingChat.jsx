@@ -33,7 +33,7 @@ const FloatingChat = () => {
 
     // Simulate typing delay for a natural feel (400-800ms)
     const delay = Math.floor(Math.random() * 400) + 400;
-    
+
     setTimeout(() => {
       const response = getResponse(userMessage);
       setMessages(prev => [...prev, { role: 'ai', text: response }]);
@@ -45,7 +45,7 @@ const FloatingChat = () => {
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
       <AnimatePresence>
         {isOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
@@ -58,7 +58,7 @@ const FloatingChat = () => {
                 <Terminal size={16} className="text-primary" />
                 <span className="text-xs text-textBody font-bold">tamedev@ai:~</span>
               </div>
-              <button 
+              <button
                 onClick={() => setIsOpen(false)}
                 className="text-textBody hover:text-primary transition-colors"
               >
@@ -70,11 +70,10 @@ const FloatingChat = () => {
             <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-background">
               {messages.map((msg, idx) => (
                 <div key={idx} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                  <div className={`max-w-[85%] rounded-lg px-3 py-2 ${
-                    msg.role === 'user' 
-                      ? 'bg-primary/20 text-primary border border-primary/30 rounded-br-none' 
+                  <div className={`max-w-[85%] rounded-lg px-3 py-2 ${msg.role === 'user'
+                      ? 'bg-primary/20 text-primary border border-primary/30 rounded-br-none'
                       : 'bg-surface border border-white/5 text-textHeading rounded-bl-none'
-                  }`}>
+                    }`}>
                     <p className="text-xs leading-relaxed whitespace-pre-wrap">{msg.text}</p>
                   </div>
                 </div>
@@ -105,8 +104,8 @@ const FloatingChat = () => {
                     disabled={isLoading}
                   />
                 </div>
-                <button 
-                  type="submit" 
+                <button
+                  type="submit"
                   disabled={!input.trim() || isLoading}
                   className="bg-primary/20 hover:bg-primary/30 text-primary border border-primary/30 px-4 rounded-lg transition-colors flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
                 >
@@ -120,9 +119,8 @@ const FloatingChat = () => {
 
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`w-14 h-14 rounded-full flex items-center justify-center shadow-[0_0_20px_-5px_rgba(0,217,255,0.5)] transition-all duration-300 ${
-          isOpen ? 'bg-surface text-primary border border-primary/50 rotate-90' : 'bg-gradient-to-r from-primary to-secondary text-white hover:scale-110 animate-glow'
-        }`}
+        className={`w-14 h-14 rounded-full flex items-center justify-center shadow-[0_0_20px_-5px_rgba(0,217,255,0.5)] transition-all duration-300 ${isOpen ? 'bg-surface text-primary border border-primary/50 rotate-90' : 'bg-gradient-to-r from-primary to-secondary text-white hover:scale-110 animate-glow'
+          }`}
       >
         {isOpen ? <X size={24} /> : <MessageSquare size={24} />}
       </button>

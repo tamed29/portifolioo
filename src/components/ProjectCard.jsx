@@ -1,62 +1,55 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink } from 'lucide-react';
-import { FaGithub } from 'react-icons/fa';
+import { ArrowRight } from 'lucide-react';
+import { getProjectImage } from '../utils/projectImages';
 
-const ProjectCard = ({ project, index }) => {
+const ProjectCard = ({ project, index, onSelectProject }) => {
+  const projectImg = getProjectImage(project.imageKey);
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="bg-surface rounded-xl p-6 border border-white/5 hover:border-primary/50 transition-all duration-300 group flex flex-col h-full hover:shadow-[0_0_30px_-5px_rgba(0,217,255,0.15)] relative overflow-hidden"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 20 }}
+      transition={{ duration: 0.4, delay: index * 0.08 }}
+      className="bg-surface/90 dark:bg-surface/80 rounded-2xl p-4 sm:p-5 border border-slate-200 dark:border-white/10 hover:border-primary/60 dark:hover:border-primary/60 transition-all duration-300 group flex flex-col h-full hover:shadow-[0_0_35px_-5px_rgba(0,217,255,0.3)] hover:-translate-y-2 relative overflow-hidden"
     >
-      {/* Subtle background glow effect on hover */}
-      <div className="absolute -inset-px bg-gradient-to-r from-primary/0 via-secondary/10 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl blur-xl -z-10"></div>
-      
-      <div className="flex justify-between items-start mb-4">
-        <h3 className="text-xl font-bold text-textHeading group-hover:text-primary transition-colors">
-          {project.title}
-        </h3>
-        <span className="text-xs font-semibold px-2 py-1 bg-secondary/20 text-secondary rounded-full whitespace-nowrap ml-4 border border-secondary/20">
+      {/* Background ambient glow on hover */}
+      <div className="absolute -inset-px bg-gradient-to-r from-primary/0 via-secondary/15 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl blur-xl -z-10" />
+
+      {/* Taller & Larger Header Screenshot Image Box */}
+      <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] rounded-xl overflow-hidden bg-slate-950 shadow-md">
+        <img 
+          src={projectImg} 
+          alt={project.title}
+          className="w-full h-full object-cover object-top group-hover:scale-105 transition-all duration-500"
+          loading="lazy"
+        />
+
+        {/* Subtle Bottom Transition Edge Fade */}
+        <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-slate-950/70 to-transparent opacity-80 pointer-events-none" />
+
+        {/* Status Badge ONLY (Top Right Corner) */}
+        <span className="absolute top-3 right-3 text-[11px] font-bold px-2.5 py-1 bg-slate-900/85 backdrop-blur-md text-secondary border border-secondary/35 rounded-full shadow-md z-10">
           {project.status}
         </span>
       </div>
-      
-      <p className="text-textBody text-sm mb-6 flex-grow">
-        {project.description}
-      </p>
-      
-      <div className="flex flex-wrap gap-2 mb-6">
-        {project.tech.map((t, i) => (
-          <span key={i} className="text-xs bg-background px-2 py-1 rounded text-textBody border border-white/5">
-            {t}
-          </span>
-        ))}
-      </div>
-      
-      <div className="flex gap-4 mt-auto">
-        {project.liveUrl && (
-          <a
-            href={project.liveUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center gap-1.5 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
-          >
-            <ExternalLink size={16} /> Live Demo
-          </a>
-        )}
-        {project.githubUrl && (
-          <a
-            href={project.githubUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center gap-1.5 text-sm font-medium text-textBody hover:text-textHeading transition-colors"
-          >
-            <FaGithub size={16} /> Source Code
-          </a>
-        )}
+
+      {/* Card Bottom Area (Sleek Compact Title & Action Button) */}
+      <div className="pt-4 flex flex-col flex-grow justify-between">
+        {/* Decreased Compact Project Title */}
+        <h3 className="text-base sm:text-lg font-bold text-textHeading group-hover:text-primary transition-colors duration-300 mb-4 line-clamp-1">
+          {project.title}
+        </h3>
+
+        {/* View Project Button */}
+        <button
+          onClick={() => onSelectProject(project)}
+          className="w-full py-2.5 px-4 rounded-xl bg-background border border-slate-200 dark:border-white/10 group-hover:border-primary/50 group-hover:bg-primary/10 text-textHeading group-hover:text-primary font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all duration-300 shadow-sm hover:scale-[1.02] active:scale-[0.98]"
+        >
+          <span>View Project</span>
+          <ArrowRight size={15} className="transform group-hover:translate-x-1 transition-transform duration-300" />
+        </button>
       </div>
     </motion.div>
   );

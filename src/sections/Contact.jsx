@@ -27,12 +27,23 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="mb-12 text-center"
+          className="mb-14 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-textHeading mb-6">Contact</h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary rounded-full mx-auto mb-8"></div>
+          {/* Eyebrow Badge */}
+          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-widest text-primary bg-primary/10 border border-primary/20 uppercase mb-4 shadow-sm">
+            <Mail size={14} className="text-primary" />
+            <span>Get In Touch</span>
+          </span>
+
+          {/* Heading */}
+          <h2 className="text-3xl md:text-5xl font-extrabold text-textHeading tracking-tight mb-4">
+            Contact Me
+          </h2>
+
+          {/* Glowing Accent Line */}
+          <div className="w-24 h-1.5 bg-gradient-to-r from-primary via-secondary to-primary rounded-full shadow-[0_0_15px_rgba(0,217,255,0.5)] mx-auto mb-6"></div>
           
-          <p className="text-textBody text-base md:text-lg max-w-2xl mx-auto mb-12 leading-relaxed text-left md:text-center">
+          <p className="text-textBody text-base md:text-lg max-w-2xl mx-auto mb-12 leading-relaxed text-center">
             I'm currently open to {profile.openTo.replace(/\.$/, '')}.
             <br className="hidden md:block" />
             <span className="inline-block mt-2">
@@ -108,28 +119,29 @@ const Contact = () => {
           </form>
         </motion.div>
         
-        <div className="flex flex-wrap justify-center gap-6">
+        <div className="flex flex-wrap justify-center items-center gap-4 max-w-4xl mx-auto">
           <motion.a 
             href="mailto:tamiratdereje53@gmail.com"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.05 }}
-            className="flex items-center gap-3 px-6 py-4 bg-surface border border-white/5 rounded-xl hover:border-primary/50 hover:shadow-[0_0_20px_-5px_rgba(0,217,255,0.3)] transition-all group"
+            className="flex items-center justify-center gap-3 px-5 py-3.5 bg-surface/80 dark:bg-surface/80 border border-slate-200 dark:border-white/10 hover:border-primary/50 dark:hover:border-primary/50 rounded-full shadow-sm hover:shadow-[0_0_20px_-3px_rgba(0,217,255,0.3)] hover:-translate-y-1 transition-all duration-300 group"
           >
-            <Mail className="text-primary group-hover:scale-110 transition-transform" />
-            <span className="text-textHeading">tamiratdereje53@gmail.com</span>
+            <Mail className="text-[#EA4335] group-hover:scale-110 group-hover:brightness-125 transition-all duration-300" size={18} />
+            <span className="text-textHeading text-sm font-semibold">Email</span>
           </motion.a>
+
           <motion.a 
             href={`tel:${profile.contact.phone.replace(/\s+/g, '')}`}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="flex items-center gap-3 px-6 py-4 bg-surface border border-white/5 rounded-xl hover:border-primary/50 hover:shadow-[0_0_20px_-5px_rgba(0,217,255,0.3)] transition-all group"
+            className="flex items-center justify-center gap-3 px-5 py-3.5 bg-surface/80 dark:bg-surface/80 border border-slate-200 dark:border-white/10 hover:border-primary/50 dark:hover:border-primary/50 rounded-full shadow-sm hover:shadow-[0_0_20px_-3px_rgba(0,217,255,0.3)] hover:-translate-y-1 transition-all duration-300 group"
           >
-            <Phone className="text-primary group-hover:scale-110 transition-transform" />
-            <span className="text-textHeading">{profile.contact.phone}</span>
+            <Phone className="text-[#10B981] group-hover:scale-110 group-hover:brightness-125 transition-all duration-300" size={18} />
+            <span className="text-textHeading text-sm font-semibold">Phone</span>
           </motion.a>
           
           <motion.a 
@@ -140,10 +152,10 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="flex items-center gap-3 px-6 py-4 bg-surface border border-white/5 rounded-xl hover:border-primary/50 hover:shadow-[0_0_20px_-5px_rgba(0,217,255,0.3)] transition-all group"
+            className="flex items-center justify-center gap-3 px-5 py-3.5 bg-surface/80 dark:bg-surface/80 border border-slate-200 dark:border-white/10 hover:border-primary/50 dark:hover:border-primary/50 rounded-full shadow-sm hover:shadow-[0_0_20px_-3px_rgba(0,217,255,0.3)] hover:-translate-y-1 transition-all duration-300 group"
           >
-            <FaTelegram className="text-primary group-hover:scale-110 transition-transform" />
-            <span className="text-textHeading">Telegram</span>
+            <FaTelegram className="text-[#229ED9] group-hover:scale-110 group-hover:brightness-125 transition-all duration-300" size={18} />
+            <span className="text-textHeading text-sm font-semibold">Telegram</span>
           </motion.a>
           
           <motion.a 
@@ -154,10 +166,10 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="flex items-center gap-3 px-6 py-4 bg-surface border border-white/5 rounded-xl hover:border-primary/50 hover:shadow-[0_0_20px_-5px_rgba(0,217,255,0.3)] transition-all group"
+            className="flex items-center justify-center gap-3 px-5 py-3.5 bg-surface/80 dark:bg-surface/80 border border-slate-200 dark:border-white/10 hover:border-primary/50 dark:hover:border-primary/50 rounded-full shadow-sm hover:shadow-[0_0_20px_-3px_rgba(0,217,255,0.3)] hover:-translate-y-1 transition-all duration-300 group"
           >
-            <FaGithub className="text-primary group-hover:scale-110 transition-transform" />
-            <span className="text-textHeading">GitHub</span>
+            <FaGithub className="text-[#181717] dark:text-white group-hover:scale-110 group-hover:brightness-125 transition-all duration-300" size={18} />
+            <span className="text-textHeading text-sm font-semibold">GitHub</span>
           </motion.a>
           
           <motion.a 
@@ -168,10 +180,10 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            className="flex items-center gap-3 px-6 py-4 bg-surface border border-white/5 rounded-xl hover:border-primary/50 hover:shadow-[0_0_20px_-5px_rgba(0,217,255,0.3)] transition-all group"
+            className="flex items-center justify-center gap-3 px-5 py-3.5 bg-surface/80 dark:bg-surface/80 border border-slate-200 dark:border-white/10 hover:border-primary/50 dark:hover:border-primary/50 rounded-full shadow-sm hover:shadow-[0_0_20px_-3px_rgba(0,217,255,0.3)] hover:-translate-y-1 transition-all duration-300 group"
           >
-            <FaLinkedin className="text-primary group-hover:scale-110 transition-transform" />
-            <span className="text-textHeading">LinkedIn</span>
+            <FaLinkedin className="text-[#0A66C2] group-hover:scale-110 group-hover:brightness-125 transition-all duration-300" size={18} />
+            <span className="text-textHeading text-sm font-semibold">LinkedIn</span>
           </motion.a>
 
           <motion.a 
@@ -182,10 +194,10 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.5 }}
-            className="flex items-center gap-3 px-6 py-4 bg-surface border border-white/5 rounded-xl hover:border-primary/50 hover:shadow-[0_0_20px_-5px_rgba(0,217,255,0.3)] transition-all group"
+            className="flex items-center justify-center gap-3 px-5 py-3.5 bg-surface/80 dark:bg-surface/80 border border-slate-200 dark:border-white/10 hover:border-primary/50 dark:hover:border-primary/50 rounded-full shadow-sm hover:shadow-[0_0_20px_-3px_rgba(0,217,255,0.3)] hover:-translate-y-1 transition-all duration-300 group"
           >
-            <FaInstagram className="text-primary group-hover:scale-110 transition-transform" />
-            <span className="text-textHeading">Instagram</span>
+            <FaInstagram className="text-[#E4405F] group-hover:scale-110 group-hover:brightness-125 transition-all duration-300" size={18} />
+            <span className="text-textHeading text-sm font-semibold">Instagram</span>
           </motion.a>
         </div>
       </div>

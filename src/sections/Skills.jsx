@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Cpu } from 'lucide-react';
 import { 
   SiJavascript, SiTypescript, SiPython, SiPhp, SiMysql, 
   SiReact, SiNextdotjs, SiVite, SiTailwindcss, 
@@ -9,7 +10,7 @@ import {
   SiGit, SiGithub, SiVercel, SiRender, SiRailway, SiSupabase,
   SiCplusplus
 } from 'react-icons/si';
-import { FaJava, FaDatabase, FaHtml5, FaCss3Alt } from 'react-icons/fa';
+import { FaJava, FaHtml5, FaCss3Alt } from 'react-icons/fa';
 
 // Combined and curated list
 const coreSkills = [
@@ -42,51 +43,68 @@ const coreSkills = [
 ];
 
 const Skills = () => {
-  // Quadruple the items to ensure the marquee fills the screen seamlessly
+  // Quadruple items to ensure seamless infinite scroll
   const scrollItems = [...coreSkills, ...coreSkills, ...coreSkills, ...coreSkills];
 
   return (
     <section id="skills" className="py-24 relative z-10 overflow-hidden bg-surface/30">
+      {/* Section Header Container */}
       <div className="max-w-[1140px] mx-auto px-6 md:px-12 lg:px-24">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="mb-12"
+          className="mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-textHeading mb-4">
+          {/* Eyebrow Badge */}
+          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-widest text-secondary bg-secondary/10 border border-secondary/20 uppercase mb-4 shadow-sm">
+            <Cpu size={14} className="text-secondary" />
+            <span>Tech Stack & Skills</span>
+          </span>
+
+          {/* Heading */}
+          <h2 className="text-3xl md:text-5xl font-extrabold text-textHeading tracking-tight mb-4">
             Technologies & Skills
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary rounded-full mb-6"></div>
-          <p className="text-textBody text-lg max-w-2xl leading-relaxed">
-            I am highly proficient across a modern stack of languages, frameworks, and databases, allowing me to build robust, full-stack architectures. I continuously apply these tools to solve real-world problems and deliver scalable, production-ready software.
+
+          {/* Glowing Accent Line */}
+          <div className="w-24 h-1.5 bg-gradient-to-r from-secondary via-primary to-secondary rounded-full shadow-[0_0_15px_rgba(124,58,237,0.5)] mb-6" />
+
+          {/* Subtitle */}
+          <p className="text-textBody text-base md:text-lg max-w-2xl leading-relaxed">
+            I am highly proficient across a modern stack of languages, frameworks, and databases, allowing me to build robust, full-stack architectures and intelligent AI applications.
           </p>
         </motion.div>
-        
-        <div className="mt-16">
-          <div className="relative flex overflow-hidden group py-4">
-            <div className="absolute top-0 bottom-0 left-0 w-16 md:w-32 bg-gradient-to-r from-background to-transparent z-10"></div>
-            <div className="absolute top-0 bottom-0 right-0 w-16 md:w-32 bg-gradient-to-l from-background to-transparent z-10"></div>
-            
-            <div className="flex gap-16 md:gap-24 w-max animate-scroll-left">
-              {scrollItems.map((skill, idx) => {
-                const { Icon, color, name } = skill;
-                return (
-                  <div 
-                    key={idx} 
-                    className="flex flex-col items-center justify-center min-w-[80px] gap-4 transition-transform hover:scale-110 cursor-default"
-                  >
+      </div>
+
+      {/* FULL WIDTH SCREEN MARQUEE TICKER (Edge to Edge across screen width) */}
+      <div className="w-full relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] overflow-hidden py-6">
+        <div className="relative flex overflow-hidden group">
+          {/* Left & Right Edge Gradient Fade Mask */}
+          <div className="absolute top-0 bottom-0 left-0 w-20 sm:w-32 md:w-48 bg-gradient-to-r from-background via-background/80 to-transparent z-10 pointer-events-none" />
+          <div className="absolute top-0 bottom-0 right-0 w-20 sm:w-32 md:w-48 bg-gradient-to-l from-background via-background/80 to-transparent z-10 pointer-events-none" />
+
+          {/* Infinite Scroll Track */}
+          <div className="flex gap-16 md:gap-24 w-max animate-scroll-left">
+            {scrollItems.map((skill, idx) => {
+              const { Icon, color, name } = skill;
+              return (
+                <div 
+                  key={idx} 
+                  className="flex flex-col items-center justify-center min-w-[80px] gap-3.5 transition-transform duration-300 hover:scale-110 cursor-default group/icon"
+                >
+                  <div className="p-3 rounded-2xl bg-surface/50 border border-white/5 group-hover/icon:border-primary/40 shadow-sm transition-all duration-300">
                     <Icon 
-                      size={64} 
+                      size={54} 
                       style={{ color }}
-                      className="drop-shadow-sm transition-all duration-300" 
+                      className="drop-shadow-sm transition-all duration-300 group-hover/icon:brightness-110" 
                     />
-                    <span className="text-sm font-semibold text-textBody">{name}</span>
                   </div>
-                );
-              })}
-            </div>
+                  <span className="text-xs sm:text-sm font-semibold text-textBody group-hover/icon:text-textHeading transition-colors">{name}</span>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

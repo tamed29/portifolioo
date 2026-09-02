@@ -42,7 +42,7 @@ const ProfileImage = ({ className }) => (
 const Hero = () => {
   return (
     <section id="hero" className="min-h-screen relative flex flex-col justify-center overflow-hidden pt-20 lg:pt-20 pb-12">
-      {/* Subtle Background Elements for depth in both themes */}
+      {/* Background Depth Ambient Glow */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-[10%] -left-[10%] w-[40%] h-[50%] bg-primary/10 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-[120px] animate-pulse" style={{ animationDuration: '8s' }}></div>
         <div className="absolute top-[20%] -right-[10%] w-[40%] h-[50%] bg-secondary/10 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-[120px] animate-pulse" style={{ animationDuration: '10s', animationDelay: '2s' }}></div>
@@ -63,7 +63,7 @@ const Hero = () => {
             </span>
           </h1>
 
-          {/* Mobile Profile Image - Appears under the name, only on small screens */}
+          {/* Mobile Profile Image */}
           <div className="flex lg:hidden my-2">
             <ProfileImage className="w-40 h-40 md:w-56 md:h-56" />
           </div>
@@ -71,23 +71,24 @@ const Hero = () => {
           <div className="flex flex-col items-center lg:items-start gap-3 mt-4">
             <h2 className="text-2xl md:text-3xl text-textHeading font-bold tracking-tight text-center lg:text-left">
               Software Engineer <br className="hidden md:block" />
-              <span className="text-textBody font-medium text-xl md:text-2xl">Specializing in AI & Full-Stack Architecture</span>
+              <span className="text-textBody font-medium text-xl md:text-2xl">Specializing in Full-Stack & AI Architecture</span>
             </h2>
 
             <div className="flex flex-wrap justify-center lg:justify-start items-center gap-4 text-sm text-textBody font-semibold">
-              <span className="flex items-center gap-2 bg-surface px-3 py-1.5 rounded-md border border-textBody/10">
+              <span className="flex items-center gap-2 bg-surface px-3 py-1.5 rounded-md border border-textBody/10 shadow-sm">
                 <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
-                10+ Projects Shipped
+                10+ Shipped Projects
               </span>
-              <span className="flex items-center gap-2 bg-surface px-3 py-1.5 rounded-md border border-textBody/10">
+              <span className="flex items-center gap-2 bg-surface px-3 py-1.5 rounded-md border border-textBody/10 shadow-sm">
                 <div className="w-1.5 h-1.5 rounded-full bg-secondary"></div>
                 4th-Year SE Student
               </span>
             </div>
           </div>
 
-          <p className="text-textBody text-base md:text-lg max-w-xl leading-relaxed mt-2 text-center lg:text-left mx-auto lg:mx-0">
-            I engineer robust, scalable software and integrate advanced AI capabilities to drive business value. Focused on delivering production-ready systems.
+          {/* Humanized & Professional Bio Paragraph */}
+          <p className="text-textBody text-base md:text-lg max-w-xl leading-relaxed mt-2 text-center lg:text-left mx-auto lg:mx-0 font-normal">
+            I engineer robust, scalable software systems and integrate modern AI capabilities to solve real-world challenges and deliver high-impact digital products.
           </p>
 
           <div className="flex flex-col items-center lg:items-start gap-4 mt-4 w-full sm:w-auto">
@@ -97,7 +98,7 @@ const Hero = () => {
                 smooth={true}
                 duration={500}
                 offset={-80}
-                className="w-[85%] max-w-[280px] sm:max-w-none sm:w-auto px-5 py-2 md:px-6 md:py-2.5 text-center rounded-xl bg-gradient-to-r from-primary to-secondary text-white font-bold tracking-wide text-xs cursor-pointer hover:shadow-[0_0_20px_rgba(0,217,255,0.4)] transition-all transform hover:-translate-y-1"
+                className="w-[85%] max-w-[280px] sm:max-w-none sm:w-auto px-5 py-2.5 md:px-6 md:py-3 text-center rounded-xl bg-gradient-to-r from-primary to-secondary text-white font-bold tracking-wide text-xs cursor-pointer hover:shadow-[0_0_20px_rgba(0,217,255,0.4)] transition-all transform hover:-translate-y-1"
               >
                 VIEW MY PROJECTS
               </Link>
@@ -106,14 +107,14 @@ const Hero = () => {
                 smooth={true}
                 duration={500}
                 offset={-80}
-                className="w-[85%] max-w-[280px] sm:max-w-none sm:w-auto px-5 py-2 md:px-6 md:py-2.5 text-center rounded-xl bg-transparent text-textHeading border-2 border-primary/50 font-bold tracking-wide text-xs cursor-pointer hover:bg-primary/10 hover:border-primary transition-all transform hover:-translate-y-1"
+                className="w-[85%] max-w-[280px] sm:max-w-none sm:w-auto px-5 py-2.5 md:px-6 md:py-3 text-center rounded-xl bg-transparent text-textHeading border-2 border-primary/50 font-bold tracking-wide text-xs cursor-pointer hover:bg-primary/10 hover:border-primary transition-all transform hover:-translate-y-1"
               >
                 CONTACT ME
               </Link>
               <a
                 href="/tamirat_cv.pdf"
                 download="Tamirat_Dereje_CV.pdf"
-                className="w-[85%] max-w-[280px] sm:max-w-none sm:w-auto px-5 py-2 md:px-6 md:py-2.5 text-center rounded-xl bg-surface/50 text-textBody border border-textBody/20 font-bold tracking-wide text-xs cursor-pointer hover:bg-surface hover:text-textHeading transition-all transform hover:-translate-y-1"
+                className="w-[85%] max-w-[280px] sm:max-w-none sm:w-auto px-5 py-2.5 md:px-6 md:py-3 text-center rounded-xl bg-surface/50 text-textBody border border-textBody/20 font-bold tracking-wide text-xs cursor-pointer hover:bg-surface hover:text-textHeading transition-all transform hover:-translate-y-1"
               >
                 DOWNLOAD MY CV
               </a>
@@ -142,7 +143,7 @@ const Hero = () => {
           </div>
         </motion.div>
 
-        {/* Desktop Profile Image - Appears on the right side, only on large screens */}
+        {/* Desktop Profile Image */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
